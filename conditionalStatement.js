@@ -278,9 +278,98 @@
 //     console.log(res);
 // })
 
-var demo=()=>{
-    setTimeout(()=>{
-        console.log("Demo");
-    }, 2000);
+// var demo=()=>{
+//     setTimeout(()=>{
+//         console.log("Demo");
+//     }, 2000);
+// }
+// demo();
+
+// //Template literals
+// var age = 18;
+// var str = "Keerthi's age is " + age;
+// //or
+// var str1 = `Keerthi's age is ${age}`;
+// console.log(str);
+// console.log(str1);
+
+// //Map->saves and returns in new array,arithmetic operator
+// var arr =[1,2,3,4,5];
+// var double=arr.map((num)=>num*2);
+// console.log(double);
+
+// //filter->returns the filtered array,relational operator
+// var arr =[1,2,3,4,5];   
+// var even=arr.filter((num)=>num%2===0);
+// console.log(even);
+
+// //reducer
+// var arr =[1,2,3,4,5];
+// var sum=arr.reduce((acc, num)=>acc+num, 0);
+// console.log(sum);
+
+// var arr=[1,2,3,4,5]
+// var evencount=arr.map((num)=>num%2===0).filter((num)=>num===true).reduce((acc, num)=>acc+num, 0);
+// console.log(evencount);
+
+// var student=[{
+//     name:"Keerthi",
+//     marks:98
+// },{
+//     name:"Hansi",marks:99
+// },{
+//     name:"Boomi",marks:95
+// },
+// ];
+// //filter
+// var studentmark=student.filter(s=>s.marks>95);
+// console.log(studentmark);
+// //map
+// var studentname=student.map(s=>s.name);
+// console.log(studentname);
+// //reduce
+// var studentmarks=student.reduce((acc,s)=>acc+s.marks,0);
+// console.log(studentmarks);
+// //average
+// var studentavg=student.reduce((acc, s)=>acc+s.marks, 0)/student.length; 
+// console.log(studentavg);
+
+// //promise
+// const promise = new Promise((resolve, reject) => {
+//    var success=true;
+//    if(success){
+//        resolve("Success");
+//    }
+//    else{
+//        reject("Failure");
+//    }
+// });
+// promise.then((res)=>{
+//     console.log(res);
+// }).catch((err)=>{
+//     console.log(err);
+// });
+
+// const getData = () =>{
+//     return fetch('https://jsonplaceholder.typicode.com/posts')
+// }
+// getData().then((res)=>{
+//     return res.json();
+// }).then((data)=>{
+//     console.log(data);
+// }).catch((err)=>{
+//     console.log(err);
+// })
+
+//async await
+const getData = async () =>{
+    try{
+        const res = await fetch('https://jsonplaceholder.typicode.com/posts')
+        const data = await res.json();
+        console.log(data);
+    }
+    catch(err){
+        console.log(err);
+    }
 }
-demo();
+getData();
